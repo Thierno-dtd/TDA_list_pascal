@@ -5,11 +5,11 @@ interface
 uses listeTableau; 
 
 type
-  T = integer;
+            T = integer;
 
 procedure creerListe(var L: liste);
 function occurence(L: liste; entier: T): integer;
-procedure suprimerOccurence(var L: liste; entier: T);
+procedure supprimerOccurence(var L: liste; entier: T);
 procedure concatenerDeuxListes(L1, L2: liste; var Lres: liste);
 
 implementation
@@ -35,7 +35,7 @@ function occurence (L: liste, entier: integer) : integer;
 var
             i, count, taille : integer;
 begin
-            taille := Longeur(L);
+            taille := longeur(L);
             i := 1;
             count :=  0;
             while i<taille do
@@ -46,17 +46,17 @@ begin
             occurence:=count;
 end;
 
-procedure suprimerOccurence (L: liste, entier: integer) ;
+procedure supprimerOccurence (L: liste, entier: integer) ;
 var
             i, count, taille : integer;
 begin
-            taille := Longeur(L);
+            taille := longeur(L);
             i := 1;
             while i < taille do
             begin
-                        if ieme(L, i) = entier 
+                        if ieme(L, i) = entier then
                         begin
-                                    supprimer(L,i) ;
+                                    supprimer(L,i);
                                     taille := taille - 1;
                         end;
                         else  i := i+1;
@@ -78,13 +78,3 @@ begin
 end;
 
 end.
-
-
-
-
-
-
-        
-
-        
-        

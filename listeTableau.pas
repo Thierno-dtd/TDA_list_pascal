@@ -1,26 +1,23 @@
 unit listeTableau;
 
-
 interface
 
-uses SysUtils;
-
 const
-  MAX = 100;
+            MAX = 100;
 
 type
-  T = integer;  
+            T = integer;  
 
-  liste = record
-    elements: array[1..MAX] of T;
-    taille: integer;
-  end;
+            liste = record
+                                elements: array[1..MAX] of T;
+                                taille: integer;
+                        end;
 
 function longueur(L: liste): integer;
 procedure inserer(var L: liste; pos: integer; val: T);
 procedure supprimer(var L: liste; pos: integer);
 function ieme(L: liste; pos: integer): T;
-procedure iemeVar(L: liste; pos: integer; var val: T);
+procedure iemep(L: liste; pos: integer; var val: T);
 procedure vide(var L: liste);
 
 implementation
@@ -61,17 +58,16 @@ end;
 
 function ieme(L: liste; pos: integer): T;
 begin
-            if (pos >= 1) and (pos <= L.taille) then  ieme := L.elements[pos]
-            else raise Exception.Create('Erreur : position invalide.');
-            //begin
-            //            writeln('Erreur : position invalide.');
-            //            ieme := 0; 
-            //end;
+            if (pos >= 1) and (pos <= L.taille) then  ieme := L.elements[pos] ;
+            begin
+                        writeln('Erreur : position invalide.');
+                        ieme := 0; 
+            end;
 end;
 
-procedure ieme(L: liste; pos: integer; var val: T);
+procedure iemep(L: liste; pos: integer; var val: T);
 begin
-            if (pos >= 1) and (pos <= L.taille) then  val := L.elements[pos]
+            if (pos >= 1) and (pos <= L.taille) then  val := L.elements[pos];
             else      writeln('Erreur : position invalide.');
 end;
 

@@ -3,23 +3,23 @@ unit listePointeur;
 interface
 
 type
-  T = integer;
+            T = integer;
   
-  pCellule = ^elt;
+            pCellule = ^elt;
 
-  elt = record
-    val: T;
-    suivant: pCellule;
-  end;
+            elt = record
+                                val: T;
+                                suivant: pCellule;
+                    end;
 
-  liste = pCellule;
+            liste = pCellule;
 
 procedure vide(var L: liste);
 function longueur(L: liste): integer;
 procedure inserer(var L: liste; pos: integer; val: T);
 procedure supprimer(var L: liste; pos: integer);
 function ieme(L: liste; pos: integer): T;
-procedure iemeVar(L: liste; pos: integer; var val: T);
+procedure iemep(L: liste; pos: integer; var val: T);
 
 implementation
 
@@ -48,7 +48,7 @@ var
             nouv, courant: liste;
             i: integer;
 begin
-            if (pos < 1) or (pos > longueur(L) + 1) then    writeln('Erreur : position invalide.');
+            if (pos < 1) or (pos > longueur(L) + 1) then writeln('Erreur : position invalide.');
             else
             begin
                         new(nouv);
@@ -62,10 +62,7 @@ begin
                         else
                         begin
                                     courant := L;
-                                    for i := 1 to pos - 2 do
-                                    begin
-                                                courant := courant^.suivant;
-                                    end;
+                                    for i := 1 to pos - 2 do  courant := courant^.suivant;
                                     nouv^.suivant := courant^.suivant;
                                     courant^.suivant := nouv;
                         end;
@@ -109,7 +106,7 @@ begin
             if (pos < 1) or (pos > longueur(L)) then
             begin
                         writeln('Erreur : position invalide.');
-                        halt;
+                        ieme := 0;
             end;
             courant := L;
             for i := 1 to pos - 1 do      courant := courant^.suivant;
@@ -117,7 +114,7 @@ begin
             ieme := courant^.val;
 end;
 
-procedure ieme(L: liste; pos: integer; var val: T);
+procedure iemep(L: liste; pos: integer; var val: T);
 var
             courant: liste;
             i : integer;
@@ -128,7 +125,7 @@ var
                         courant := L;
                         for i := 1 to pos - 1 do    courant := courant^.suivant;
                         val := courant^.val;
-            end:
+            end;
 end;
 
 end.
