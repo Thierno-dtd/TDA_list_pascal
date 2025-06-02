@@ -40,7 +40,7 @@ begin
                         count := count + 1;
                         p := p^.suivant;
             end;
-  longueur := count;
+            longueur := count;
 end;
 
 procedure inserer(var L: liste; pos: integer; val: T);
@@ -48,7 +48,7 @@ var
             nouv, courant: liste;
             i: integer;
 begin
-            if (pos < 1) or (pos > longueur(L) + 1) then writeln('Erreur : position invalide.');
+            if (pos < 1) or (pos > longueur(L) + 1) then writeln('Erreur : position invalide.')
             else
             begin
                         new(nouv);
@@ -74,7 +74,7 @@ var
             courant, temp: liste;
             i: integer;
 begin
-            if (pos < 1) or (pos > longueur(L)) then    writeln('Erreur : position invalide.');
+            if (pos < 1) or (pos > longueur(L)) then    writeln('Erreur : position invalide.')
             else
             begin
                         if pos = 1 then
@@ -119,7 +119,7 @@ var
             courant: liste;
             i : integer;
  begin
-            if (pos < 1) or (pos > longueur(L)) then  writeln('Erreur : position invalide.');
+            if (pos < 1) or (pos > longueur(L)) then  writeln('Erreur : position invalide.')
             else
             begin
                         courant := L;

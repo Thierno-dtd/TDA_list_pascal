@@ -58,7 +58,8 @@ end;
 
 function ieme(L: liste; pos: integer): T;
 begin
-            if (pos >= 1) and (pos <= L.taille) then  ieme := L.elements[pos] ;
+            if (pos >= 1) and (pos <= L.taille) then  ieme := L.elements[pos]
+            else
             begin
                         writeln('Erreur : position invalide.');
                         ieme := 0; 
@@ -67,7 +68,7 @@ end;
 
 procedure iemep(L: liste; pos: integer; var val: T);
 begin
-            if (pos >= 1) and (pos <= L.taille) then  val := L.elements[pos];
+            if (pos >= 1) and (pos <= L.taille) then  val := L.elements[pos]
             else      writeln('Erreur : position invalide.');
 end;
 

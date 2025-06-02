@@ -9,7 +9,7 @@ type
 
 procedure creerListe(var L: liste);
 function occurence(L: liste; entier: T): integer;
-procedure supprimerOccurence(var L: liste; entier: T);
+procedure supprimerOccurence(L: liste; entier: T);
 procedure concatenerDeuxListes(L1, L2: liste; var Lres: liste);
 
 implementation
@@ -31,14 +31,14 @@ begin
             end;
 end;
 
-function occurence (L: liste, entier: integer) : integer;
+function occurence (L: liste; entier: integer) : integer;
 var
             i, count, taille : integer;
 begin
-            taille := longeur(L);
+            taille := longueur(L);
             i := 1;
             count :=  0;
-            while i<taille do
+            while i<= taille do
             begin
                         if ieme(L, i) = entier then count:= count +1;
                         i := i+1;
@@ -46,11 +46,11 @@ begin
             occurence:=count;
 end;
 
-procedure supprimerOccurence (L: liste, entier: integer) ;
+procedure supprimerOccurence (L: liste; entier: integer) ;
 var
             i, count, taille : integer;
 begin
-            taille := longeur(L);
+            taille := longueur(L);
             i := 1;
             while i < taille do
             begin
@@ -58,7 +58,7 @@ begin
                         begin
                                     supprimer(L,i);
                                     taille := taille - 1;
-                        end;
+                        end
                         else  i := i+1;
             end;
 end;
