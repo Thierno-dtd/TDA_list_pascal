@@ -2,7 +2,8 @@ unit operationOccurence;
 
 interface
 
-uses listeTableau; 
+//uses listeTableau;
+uses listePointeur;
 
 type
             T = integer;
@@ -48,16 +49,19 @@ end;
 
 procedure supprimerOccurence (var L: liste; entier: integer) ;
 var
-    i: integer;
+            i,taille: integer;
 begin
-    i := 1;
-    while i <= L.taille do
-    begin
-        if L.elements[i] = entier then
-            supprimer(L, i)  // suppression décale les éléments, donc on garde i
-        else
-            i := i + 1;
-    end;
+            i := 1;
+            taille := longueur(L);
+            while i <= taille do
+            begin
+                        if ieme(L,i)= entier then  
+                        begin
+                                    supprimer(L, i) ;
+                                    taille := taille - 1;
+                        end
+                        else i := i + 1;
+            end;
 end;
 
 procedure concatenerDeuxListes(L1, L2: liste; var Lres: liste);

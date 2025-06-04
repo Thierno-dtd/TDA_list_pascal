@@ -2,6 +2,7 @@ program MainTest;
 
 uses
             listeTableau,
+            listePointeur,
             afficheListe,
             operationOccurence;
 
@@ -10,12 +11,12 @@ var
             val, occ: integer;
 
 begin
-            writeln('Crï¿½ation de la premiï¿½re liste :');
+            writeln('Cr‚ation de la premiï¿½re liste :');
             creerListe(L1);  
             afficherListe(L1);
 
-            //writeln('Crï¿½ation de la deuxiï¿½me liste :');
-            //creerListe(L2);  
+            writeln('Cr‚ation de la deuxiŠme liste :');
+            creerListe(L2);  
             writeln('Entrez la valeur dont vous voulez compter les occurrences dans L1 :');
             readln(val);
             occ := occurence(L1, val);
@@ -26,8 +27,8 @@ begin
             writeln('Liste L1 aprï¿½s suppression :');
             afficherListe(L1);
 
-            //writeln('Concatï¿½nation de L1 et L2 dans L3.');
-            //concatenerDeuxListes(L1, L2, L3);
-            //writeln('Contenu de la liste L3 :');
-            //afficherListe(L3);
+            writeln('Concatenation de L1 et L2 dans L3.');
+            concatenerDeuxListes(L1, L2, L3);
+            writeln('Contenu de la liste L3 :');
+            afficherListe(L3);
 end.
