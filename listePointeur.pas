@@ -18,8 +18,8 @@ procedure vide(var L: liste);
 function longueur(L: liste): integer;
 procedure inserer(var L: liste; pos: integer; val: T);
 procedure supprimer(var L: liste; pos: integer);
-function ieme(L: liste; pos: integer): T;
-procedure iemep(L: liste; pos: integer; var val: T);
+function ieme(L: liste; pos: integer): T; overload;
+procedure ieme(L: liste; pos: integer; var val: T); overload;
 
 implementation
 
@@ -98,7 +98,7 @@ begin
             end;           
 end;
 
-function ieme(L: liste; pos: integer): T;
+function ieme(L: liste; pos: integer): T; overload;
 var
             courant: liste;
             i: integer;
@@ -114,7 +114,7 @@ begin
             ieme := courant^.val;
 end;
 
-procedure iemep(L: liste; pos: integer; var val: T);
+procedure ieme(L: liste; pos: integer; var val: T); overload;
 var
             courant: liste;
             i : integer;

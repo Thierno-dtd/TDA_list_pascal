@@ -16,8 +16,8 @@ type
 function longueur(L: liste): integer;
 procedure inserer(var L: liste; pos: integer; val: T);
 procedure supprimer(var L: liste; pos: integer);
-function ieme(L: liste; pos: integer): T;
-procedure iemep(L: liste; pos: integer; var val: T);
+function ieme(L: liste; pos: integer): T; overload;
+procedure ieme(L: liste; pos: integer; var val: T); overload;
 procedure vide(var L: liste);
 
 implementation
@@ -56,7 +56,7 @@ begin
                         writeln('Erreur : suppression impossible.');
 end;
 
-function ieme(L: liste; pos: integer): T;
+function ieme(L: liste; pos: integer): T; overload;
 begin
             if (pos >= 1) and (pos <= L.taille) then  ieme := L.elements[pos]
             else
@@ -66,7 +66,7 @@ begin
             end;
 end;
 
-procedure iemep(L: liste; pos: integer; var val: T);
+procedure ieme(L: liste; pos: integer; var val: T); overload;
 begin
             if (pos >= 1) and (pos <= L.taille) then  val := L.elements[pos]
             else      writeln('Erreur : position invalide.');
