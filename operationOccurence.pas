@@ -2,8 +2,8 @@ unit operationOccurence;
 
 interface
 
-//uses listeTableau;
-uses listePointeur;
+uses listeTableau;
+//uses listePointeur;
 
 type
             T = integer;
@@ -16,21 +16,21 @@ procedure concatenerDeuxListes(L1, L2: liste; var Lres: liste);
 implementation
 
 procedure creerListe(var L: liste);
-var
-            val: T;
-            i: integer;
-begin
-            vide(L);
-            i := 1;
-            writeln('Entrez les elements (<= 0 pour arreter) :');
-            readln(val);
-            while val > 0 do
-            begin
-                        inserer(L, i, val);
-                        i := i + 1;
-                        readln(val);
-            end;
-end;
+    var
+                val: T;
+                i: integer;
+    begin
+                vide(L);
+                i := 1;
+                writeln('Entrez les elements (<= 0 pour arreter) :');
+                readln(val);
+                while val > 0 do
+                begin
+                            inserer(L, i, val);
+                            i := i + 1;
+                            readln(val);
+                end;
+    end;
 
 function occurence (L: liste; entier: integer) : integer;
 var
