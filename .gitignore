@@ -1,4 +1,5 @@
 *.o
 *ppu
 *.exe
+*.ipynb
 .gitignore
